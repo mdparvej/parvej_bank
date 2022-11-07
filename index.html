@@ -65,46 +65,46 @@
         </div>
     </div>
     <script>
-        // login area
-        const input_button = document.getElementById('login').addEventListener('click',function(){
-            const remove_div = document.getElementById('login_area');
-            remove_div.style.display = 'none';
-            const faidon = document.getElementById('transaction_area');
-            faidon.style.display = 'block';
-        });
-        // diposit button handler
-        const depositBtn = document.getElementById('diposit');
-        depositBtn.addEventListener('click',function(){
-            const depositAmount = document.getElementById('input_diposit').value;
-            if(depositAmount == false){
-                document.getElementById('from_diposit').innerText = "00";
-            }
-            else{
-            const depositNumber = parseFloat(depositAmount);
+        // // login area
+        // const input_button = document.getElementById('login').addEventListener('click',function(){
+        //     const remove_div = document.getElementById('login_area');
+        //     remove_div.style.display = 'none';
+        //     const faidon = document.getElementById('transaction_area');
+        //     faidon.style.display = 'block';
+        // });
+        // // diposit button handler
+        // const depositBtn = document.getElementById('diposit');
+        // depositBtn.addEventListener('click',function(){
+        //     const depositAmount = document.getElementById('input_diposit').value;
+        //     if(depositAmount == false){
+        //         document.getElementById('from_diposit').innerText = "00";
+        //     }
+        //     else{
+        //     const depositNumber = parseFloat(depositAmount);
 
-            const currentDiposit = document.getElementById('from_diposit').innerText;
-            const currentDipositNumber = parseFloat(currentDiposit);
-            const totaldeposit = depositNumber + currentDipositNumber;
+        //     const currentDiposit = document.getElementById('from_diposit').innerText;
+        //     const currentDipositNumber = parseFloat(currentDiposit);
+        //     const totaldeposit = depositNumber + currentDipositNumber;
 
-            document.getElementById('from_diposit').innerText = totaldeposit;
-            document.getElementById('input_diposit').value = "";
-            }
-        });
-        // withdraw button handler
-        const withdrawBtn = document.getElementById('withdraw');
-        withdrawBtn.addEventListener('click',function(){
-            const withdrawAmount = document.getElementById('input_withdraw').value;
-            const withdrawAmountNumber = parseFloat(withdrawAmount);
+        //     document.getElementById('from_diposit').innerText = totaldeposit;
+        //     document.getElementById('input_diposit').value = "";
+        //     }
+        // });
+        // // withdraw button handler
+        // const withdrawBtn = document.getElementById('withdraw');
+        // withdrawBtn.addEventListener('click',function(){
+        //     const withdrawAmount = document.getElementById('input_withdraw').value;
+        //     const withdrawAmountNumber = parseFloat(withdrawAmount);
 
-            const currentWithrow =  document.getElementById('from_withdraw').innerText;
-            const currentWithrowNumber = parseFloat(currentWithrow);
-            const totalWithdraw = withdrawAmountNumber + currentWithrowNumber;
+        //     const currentWithrow =  document.getElementById('from_withdraw').innerText;
+        //     const currentWithrowNumber = parseFloat(currentWithrow);
+        //     const totalWithdraw = withdrawAmountNumber + currentWithrowNumber;
 
-            document.getElementById('from_withdraw').innerText = totalWithdraw;
-            document.getElementById('input_withdraw').value = "";
+        //     document.getElementById('from_withdraw').innerText = totalWithdraw;
+        //     document.getElementById('input_withdraw').value = "";
 
-        });
-        conosole.log('this is my');
+        // });
+        // conosole.log('this is my');
     
     </script>
 </body>
