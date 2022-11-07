@@ -1,0 +1,49 @@
+body{
+    padding: 100px;
+}
+.bank-title{
+    text-align: center;
+}
+.input_text{
+    padding: 50px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px  gray;
+}
+.transaction_area{
+    display: none;
+}
+.diposit{
+    margin: 5px 10px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    background-color: chocolate;
+}
+.withdraw{
+    margin: 5px 10px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    background-color: peru;
+}
+.blance{
+    margin: 5px 10px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    background-color: purple;
+}
+.submit_area{
+    margin-top: 50px;
+}
+.total{
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    padding: 20px;
+    margin: 20px;
+}
