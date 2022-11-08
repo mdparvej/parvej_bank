@@ -72,39 +72,55 @@
             const faidon = document.getElementById('transaction_area');
             faidon.style.display = 'block';
         });
-        // diposit button handler
-        const depositBtn = document.getElementById('diposit');
-        depositBtn.addEventListener('click',function(){
-            const depositAmount = document.getElementById('input_diposit').value;
-            if(depositAmount == false){
-                document.getElementById('from_diposit').innerText = "00";
+        // // diposit button handler
+        // const depositBtn = document.getElementById('diposit');
+        // depositBtn.addEventListener('click',function(){
+        //     const depositAmount = document.getElementById('input_diposit').value;
+        //     if(depositAmount == false){
+        //         document.getElementById('from_diposit').innerText = "00";
+        //     }
+        //     else{
+        //     const depositNumber = parseFloat(depositAmount);
+
+        //     const currentDiposit = document.getElementById('from_diposit').innerText;
+        //     const currentDipositNumber = parseFloat(currentDiposit);
+        //     const totaldeposit = depositNumber + currentDipositNumber;
+
+        //     document.getElementById('from_diposit').innerText = totaldeposit;
+        //     document.getElementById('input_diposit').value = "";
+        //     }
+        // });
+        // // withdraw button handler
+        // const withdrawBtn = document.getElementById('withdraw');
+        // withdrawBtn.addEventListener('click',function(){
+        //     const withdrawAmount = document.getElementById('input_withdraw').value;
+        //     const withdrawAmountNumber = parseFloat(withdrawAmount);
+
+        //     const currentWithrow =  document.getElementById('from_withdraw').innerText;
+        //     const currentWithrowNumber = parseFloat(currentWithrow);
+        //     const totalWithdraw = withdrawAmountNumber + currentWithrowNumber;
+
+        //     document.getElementById('from_withdraw').innerText = totalWithdraw;
+        //     document.getElementById('input_withdraw').value = "";
+
+        // });
+        function depositAndwithdraw(iputdeposit,currentDiposit){
+            const my_input = document.getElementById(iputdeposit).value;
+            const my_input_number = parseFloat(my_input);
+            if (my_input_number == false) {
+               return  document.getElementById(currentDiposit).innerText = "0";
             }
             else{
-            const depositNumber = parseFloat(depositAmount);
+                const my_current  = document.getElementById(currentDiposit).value;
+                const my_current_number = parseFloat(my_current);
 
-            const currentDiposit = document.getElementById('from_diposit').innerText;
-            const currentDipositNumber = parseFloat(currentDiposit);
-            const totaldeposit = depositNumber + currentDipositNumber;
+                const total_deposit = my_input + my_current_number;
 
-            document.getElementById('from_diposit').innerText = totaldeposit;
-            document.getElementById('input_diposit').value = "";
+                document.getElementById(iputdeposit).value = total_deposit;
             }
-        });
-        // withdraw button handler
-        const withdrawBtn = document.getElementById('withdraw');
-        withdrawBtn.addEventListener('click',function(){
-            const withdrawAmount = document.getElementById('input_withdraw').value;
-            const withdrawAmountNumber = parseFloat(withdrawAmount);
 
-            const currentWithrow =  document.getElementById('from_withdraw').innerText;
-            const currentWithrowNumber = parseFloat(currentWithrow);
-            const totalWithdraw = withdrawAmountNumber + currentWithrowNumber;
-
-            document.getElementById('from_withdraw').innerText = totalWithdraw;
-            document.getElementById('input_withdraw').value = "";
-
-        });
-        conosole.log('this is my');
+        }
+        depositAndwithdraw("input_diposit","from_diposit");
     
     </script>
 </body>
