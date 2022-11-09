@@ -32,13 +32,13 @@
             <div class="col-md-4 ">
                 <div class="withdraw">
                     <h5>Withdraw</h5>
-                    <h2>$ <span id="from_withdraw">.00</span> </h2>
+                    <h2>$ <span id="from_withdraw">00</span> </h2>
                 </div>
             </div>
             <div class="col-md-4 ">
                 <div class="blance">
                     <h5>Blance</h5>
-                    <h2>$<span id="from_blance"></span></h2>
+                    <h2>$<span id="from_blance">00</span></h2>
                 </div>
                 
             </div>
@@ -65,63 +65,62 @@
         </div>
     </div>
     <script>
-        // login area
-        const input_button = document.getElementById('login').addEventListener('click',function(){
-            const remove_div = document.getElementById('login_area');
-            remove_div.style.display = 'none';
-            const faidon = document.getElementById('transaction_area');
-            faidon.style.display = 'block';
-        });
-        // // diposit button handler
-        // const depositBtn = document.getElementById('diposit');
-        // depositBtn.addEventListener('click',function(){
-        //     const depositAmount = document.getElementById('input_diposit').value;
-        //     if(depositAmount == false){
-        //         document.getElementById('from_diposit').innerText = "00";
-        //     }
-        //     else{
-        //     const depositNumber = parseFloat(depositAmount);
-
-        //     const currentDiposit = document.getElementById('from_diposit').innerText;
-        //     const currentDipositNumber = parseFloat(currentDiposit);
-        //     const totaldeposit = depositNumber + currentDipositNumber;
-
-        //     document.getElementById('from_diposit').innerText = totaldeposit;
-        //     document.getElementById('input_diposit').value = "";
-        //     }
-        // });
-        // // withdraw button handler
-        // const withdrawBtn = document.getElementById('withdraw');
-        // withdrawBtn.addEventListener('click',function(){
-        //     const withdrawAmount = document.getElementById('input_withdraw').value;
-        //     const withdrawAmountNumber = parseFloat(withdrawAmount);
-
-        //     const currentWithrow =  document.getElementById('from_withdraw').innerText;
-        //     const currentWithrowNumber = parseFloat(currentWithrow);
-        //     const totalWithdraw = withdrawAmountNumber + currentWithrowNumber;
-
-        //     document.getElementById('from_withdraw').innerText = totalWithdraw;
-        //     document.getElementById('input_withdraw').value = "";
-
-        // });
-        function depositAndwithdraw(iputdeposit,currentDiposit){
-            const my_input = document.getElementById(iputdeposit).value;
-            const my_input_number = parseFloat(my_input);
-            if (my_input_number == false) {
-               return  document.getElementById(currentDiposit).innerText = "0";
-            }
-            else{
-                const my_current  = document.getElementById(currentDiposit).value;
-                const my_current_number = parseFloat(my_current);
-
-                const total_deposit = my_input + my_current_number;
-
-                document.getElementById(iputdeposit).value = total_deposit;
-            }
-
+         // login area
+         const input_button = document.getElementById('login').addEventListener('click',function(){
+             const remove_div = document.getElementById('login_area');
+             remove_div.style.display = 'none';
+             const faidon = document.getElementById('transaction_area');
+             faidon.style.display = 'block';
+         });
+        
+        // Deposit amd  Withdraw Btn function\
+        
+        function deposit_withdraw(fromInput,from_input){
+            const iputx = document.getElementById(fromInput).value;
+            const iputNumber = parseFloat(iputx);
+            
+            const spanx = document.getElementById(from_input).innerText;
+            const spanNumber = parseFloat(spanx);
+            
+            const total = iputNumber + spanNumber;
+            
+            
+            document.getElementById(from_input).innerText = total;
         }
-        depositAndwithdraw("input_diposit","from_diposit");
-    
+        
+        
+        
+        document.getElementById('diposit').addEventListener('click',function(){
+            
+            deposit_withdraw("input_diposit","from_diposit");
+            
+             const deposit_add = document.getElementById('input_diposit').value;
+            const deposit_add_number = parseFloat(deposit_add);
+            
+            const x = document.getElementById('from_blance').innerText;
+            const y = parseFloat(x);
+            document.getElementById('from_blance').innerText = y +  deposit_add_number;
+            
+            document.getElementById('input_diposit').value = " ";
+            
+        });
+        
+        
+        
+        document.getElementById('withdraw').addEventListener('click',function(){
+            
+            deposit_withdraw("input_withdraw","from_withdraw");
+            
+            const deposit_add = document.getElementById('input_withdraw').value;
+            const deposit_add_number = parseFloat(deposit_add);
+            
+            const x = document.getElementById('from_blance').innerText;
+            const y = parseFloat(x);
+            document.getElementById('from_blance').innerText = y + (-1 * deposit_add_number);
+            
+            document.getElementById('input_withdraw').value = " ";
+        });
+        
     </script>
 </body>
 </html>
